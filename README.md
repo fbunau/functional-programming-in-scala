@@ -3,7 +3,7 @@ Code has been organized in packages according to the chapter in which the concep
 
 The repo contains solved exercises, code from the book examples or original code that exemplifies the concept presented.
 
-There is an [ExerciseRunner](src/_ExerciseRunner.scala) in the source root, which holds an index of all chapters, subchapters and exercises implemented
+There is an [ExerciseRunner](src/ExerciseRunner.scala) in the source root, which holds an index of all chapters, subchapters and exercises implemented
 and a mechanism to run them.
 
 You can select which ones to run by modifying the values
