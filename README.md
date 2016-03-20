@@ -1,4 +1,6 @@
 
+Book : https://www.manning.com/books/functional-programming-in-scala
+
 Code has been organized in packages according to the chapter in which the concept or exercise was introduced.
 
 The repo contains solved exercises, code from the book examples or original code that exemplifies the concept presented.
