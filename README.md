@@ -32,4 +32,5 @@ val ExercisesToRun = 0 to 5
       + [PatternMatchingToCreateListOperations](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/PatternMatchingToCreateListOperations.scala)
       + [PatternMatchingDeeperInTheTypeStructure](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/PatternMatchingDeeperInTheTypeStructure.scala)
       + [HelpingTypeInferenceWithOptionalParameterList](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/HelpingTypeInferenceWithOptionalParameterList.scala)
+      + [GeneralizingToHOFSumAndProductWithFoldRight](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/GeneralizingToHOFSumAndProductWithFoldRight.scala)
 
