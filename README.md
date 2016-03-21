@@ -26,3 +26,10 @@ val ExercisesToRun = 0 to 5
       + [CurryFunctions](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/CurryFunctions.scala)
       + [CurryVsPartial](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/CurryVsPartial.scala)
       + [ComposeFunctions](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/ComposeFunctions.scala)
+   - Functional data structures
+      + [SingleLinkedList](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/SingleLinkedList.scala)
+      + [CreatingListLiteralWithVariadicApply](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/CreatingListLiteralWithVariadicApply.scala)
+      + [PatternMatchingToCreateListOperations](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/PatternMatchingToCreateListOperations.scala)
+      + [PatternMatchingDeeperInTheTypeStructure](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/PatternMatchingDeeperInTheTypeStructure.scala)
+      + [HelpingTypeInferenceWithOptionalParameterList](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/HelpingTypeInferenceWithOptionalParameterList.scala)
+

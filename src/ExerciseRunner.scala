@@ -1,8 +1,8 @@
 object ExerciseRunner {
 
   val ChapterNb = 0
-  val SubchapterNb = 1
-  val ExercisesToRun = 0 to 5
+  val SubchapterNb = 2
+  val ExercisesToRun = List(-1)//(0 to 1).toList
 
   val BookReferences = List(
     (
@@ -28,6 +28,21 @@ object ExerciseRunner {
             "ComposeFunctions")
           // todo: ex 2.1 isSorted, according to given comparison function
           // todo: ex 2.4 uncurry
+        ),
+
+        (
+          "_3_Functional_data_structures",
+
+          // todo: atleast 1 data sharing exercise, future: all exercises
+          List(
+            "SingleLinkedList",
+            "CreatingListLiteralWithVariadicApply",
+            "PatternMatchingToCreateListOperations",
+            "PatternMatchingDeeperInTheTypeStructure",
+
+            "HelpingTypeInferenceWithOptionalParameterList")
+          // todo: Recursion over lists and generalizing to higher-order functions
+          // todo: exercises
         )
       )
     )
@@ -38,9 +53,12 @@ object ExerciseRunner {
     val chapter = BookReferences(ChapterNb)
     val subchapter = chapter.list(SubchapterNb)
 
-    assert(ExercisesToRun.min >= 0)
     assert(ExercisesToRun.max < subchapter.list.size)
-    val exercisesToRun = ExercisesToRun.map(i => subchapter.list(i))
+
+    val exercisesToRun = ExercisesToRun match {
+      case List(x) if x < 0 =>  subchapter.list
+      case _ => ExercisesToRun.map(i => subchapter.list(i))
+    }
 
     def decodeBookReference(reference: Named) = {
       reference.name.replaceFirst("_", "")
@@ -86,8 +104,8 @@ object ExerciseRunner {
     def list = { t._2 }
   }
 
-  implicit def TupleToNamedListWithNamedLists[T](t: (String, List[(String, List[T])])) : NamedListWithNamedLists[T] = new NamedListWithNamedLists(t)
-  implicit def TupleToNamedList[T](t: (String, List[T])) : NamedList[T] = new NamedList(t)
+  implicit def tupleToNamedListWithNamedLists[T](t: (String, List[(String, List[T])])) : NamedListWithNamedLists[T] = new NamedListWithNamedLists(t)
+  implicit def tupleToNamedList[T](t: (String, List[T])) : NamedList[T] = new NamedList(t)
 
 }
 
