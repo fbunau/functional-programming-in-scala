@@ -5,32 +5,24 @@ Code has been organized in packages according to the chapter in which the concep
 
 The repo contains solved exercises, code from the book examples or original code that exemplifies the concept presented.
 
-There is an [ExerciseRunner](src/ExerciseRunner.scala) in the source root, which holds an index of all chapters, subchapters and exercises implemented
-and a mechanism to run them.
-
-You can select which ones to run by modifying the values
-
-```
-val ChapterNb = 0
-val SubchapterNb = 1
-val ExercisesToRun = 0 to 5
-```
+Unit tests are used to verify and run the implementation
+Bellow is a useful listing to help navigate the repo and revisit parts by jumping straight to the code from here
 
 1. Introduction to functional programming
    - What is functional programming?
-      + [CoffeeShop](src/_1_Introduction_to_functional_programming/_1_What_is_functional_programming/CoffeeShop.scala)
+      + [CoffeeShop](src/main/scala/_1_Introduction_to_functional_programming/_1_What_is_functional_programming/CoffeeShop.scala)
    - Getting started with functional programming in Scala
-      + [FibonacciWithTailRecursion](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/FibonacciWithTailRecursion.scala)
-      + [PolymorphicFunctions](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/PolymorphicFunctions.scala)
-      + [PartialFunctions](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/PartialFunctions.scala)
-      + [CurryFunctions](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/CurryFunctions.scala)
-      + [CurryVsPartial](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/CurryVsPartial.scala)
-      + [ComposeFunctions](src/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/ComposeFunctions.scala)
+      + [FibonacciWithTailRecursion](src/main/scala/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/FibonacciWithTailRecursion.scala)
+      + [PolymorphicFunctions](src/main/scala/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/PolymorphicFunctions.scala)
+      + [PartialFunctions](src/main/scala/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/PartialFunctions.scala)
+      + [CurryFunctions](src/main/scala/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/CurryFunctions.scala)
+      + [CurryVsPartial](src/main/scala/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/CurryVsPartial.scala)
+      + [ComposeFunctions](src/main/scala/_1_Introduction_to_functional_programming/_2_Getting_started_with_functional_programming_in_Scala/ComposeFunctions.scala)
    - Functional data structures
-      + [SingleLinkedList](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/SingleLinkedList.scala)
-      + [CreatingListLiteralWithVariadicApply](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/CreatingListLiteralWithVariadicApply.scala)
-      + [PatternMatchingToCreateListOperations](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/PatternMatchingToCreateListOperations.scala)
-      + [PatternMatchingDeeperInTheTypeStructure](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/PatternMatchingDeeperInTheTypeStructure.scala)
-      + [HelpingTypeInferenceWithOptionalParameterList](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/HelpingTypeInferenceWithOptionalParameterList.scala)
-      + [GeneralizingToHOFSumAndProductWithFoldRight](src/_1_Introduction_to_functional_programming/_3_Functional_data_structures/GeneralizingToHOFSumAndProductWithFoldRight.scala)
+      + [Implementing a List](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L3-L5)
+      + [Creating a List literal using variadic apply](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L9-L11)
+      + [Using pattern matching to create list operations as functions in a companion object](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L13-L22)
+      + [Pattern matching deeper in the type structure](src/test/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/ListTest.scala#L131-L141)
+      + [Helping type inference using optional parameterList](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L24-L32)
+      + [Sum and product generalized by implementing using higher order function: foldRight](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L34-L43)
 

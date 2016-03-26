@@ -1,3 +1,15 @@
+package other
+
+/*
+This code is now unused / obsolete but still keeping it in the repo as an example of code I came up with while learning
+(around chapter 1, subchapter 2)
+
+This was needed to run solutions to exercises or pieces of code from the book and structure them
+in a way to easily package in well defined concepts / parts of the book to revisit at a future time\
+
+This idea now is obsolete since I think a unit test approach is superior to println
+ */
+
 object ExerciseRunner {
 
   val ChapterNb = 0
@@ -26,45 +38,11 @@ object ExerciseRunner {
             "CurryFunctions",
             "CurryVsPartial",
             "ComposeFunctions")
-          // todo: ex 2.1 isSorted, according to given comparison function
-          // todo: ex 2.4 uncurry
         ),
 
         (
           "_3_Functional_data_structures",
 
-          /*
-          todo ex:
-            3.2 tail (removal)
-            3.3 setHead
-            3.4 drop ( n elements )
-
-            // append example
-
-            3.6 init ( new list all but the last elements )
-            3.7 foldRight with short-circuiting
-            3.8 passing Nil and Cons to foldRight
-            3.9 length of list with foldRight
-            3.10 tail recursive foldLeft
-            3.11 sum and product using foldLeft
-            3.12 reverse of a list using fold
-            3.13 foldLeft using foldRight, and foldRight using foldLeft, making a tail recursive foldRight
-            3.14 append using either foldLeft or foldRight
-            3.15 concatenate a list of list into a single list
-
-            3.16 transform list of integers by adding 1 to each element
-            3.17 List[Double] to List[String]
-            3.18 implement map
-            3.19 implement filter
-            3.20 implement flatMap
-            3.21 use flatmap to implement filter
-            3.22 function that accepts two lists and constructs a new list by adding the corresponding elements
-            3.23 generalize to zipWith, so that it's not specific to integers or addition
-
-            // example of usage with other List functions defined in the Scala lib
-
-            3.24 implement hasSubsequence to check if a list is contained as subsequence in another list
-           */
           List(
             "SingleLinkedList",
             "CreatingListLiteralWithVariadicApply",
@@ -138,4 +116,3 @@ object ExerciseRunner {
   implicit def tupleToNamedList[T](t: (String, List[T])) : NamedList[T] = new NamedList(t)
 
 }
-
