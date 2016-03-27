@@ -51,9 +51,9 @@ class Cafe {
 
 }
 
-class CoffeeShop {
+object CoffeeShop {
 
-  def run(): Unit = {
+  def main(args: Array[String]): Unit = {
 
     val cafe = new Cafe()
     val paymentProcessor = CoalescingPaymentProcessor()
