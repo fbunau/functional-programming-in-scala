@@ -31,5 +31,5 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Operations on tree: size, max, depth, map](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L9-L27)
       + [Fold on Tree: Using HOF to implement operations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L29-L250)
    - Handling errors without exceptions
-      + [Implementing Option](src/main/scala/_1_Introduction_to_functional_programming._4_Handling_errors_withouth_exceptions/Option.scala)
+      + [Implementing Option](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Option.scala)
 
