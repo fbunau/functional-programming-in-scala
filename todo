@@ -3,14 +3,14 @@ This is a todo list of exercises this repo does not have covered / implemented
 */
 
 
-# 1 Introduction to functional programming
+#### 1 Introduction to functional programming
 
-2. Getting started with functional programming in Scala
+## 2. Getting started with functional programming in Scala
 
 2.1 isSorted, according to given comparison function
 2.4 uncurry
 
-3. Functional data structures
+## 3. Functional data structures
 
 3.2 tail (removal)
 3.3 setHead
@@ -41,3 +41,17 @@ This is a todo list of exercises this repo does not have covered / implemented
 // example of usage with other List functions defined in the Scala lib
 
 3.24 implement hasSubsequence to check if a list is contained as subsequence in another list
+
+## 3. Handling errors without exceptions
+
+4.2 variance function in terms of flatMap
+4.4 function sequence that combines a list of Options into one Option containing
+    a list of all the Some values in the original list
+4.5 Implement sequence in terms of traverse
+
+4.6 Either versions of map, flatMap, orElse, map2
+
+// example of usage in the InsuranceEngine example with Either to encode the exception
+
+4.7 sequence and traverse for Either
+4.8 change map2 implementation so that it can return both errors for InsuranceEngine

@@ -32,4 +32,6 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Fold on Tree: Using HOF to implement operations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L29-L250)
    - Handling errors without exceptions
       + [Implementing Option](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Option.scala)
-
+      + [Example of lifting an existing function to work with Option](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/InsuranceEngine.scala)
+      + [Implementing the map2 lifting function](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Option.scala#L46-L51)
+      + [Implementing Either](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Either.scala)
