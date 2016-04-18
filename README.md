@@ -35,3 +35,9 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Example of lifting an existing function to work with Option](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/InsuranceEngine.scala)
       + [Implementing the map2 lifting function](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Option.scala#L46-L51)
       + [Implementing Either](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Either.scala)
+   - Strictness and laziness
+      + [Implementing Stream](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L44-L45)
+      + [Implementing a smart constructor](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L49-L53)
+      + [Generalizing fold for streams](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L34-L38)
+      + [Stream operations, just like List has](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L6-L42)
+      + [Infinite stream generators](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L66-L68)

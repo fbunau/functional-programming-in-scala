@@ -42,7 +42,7 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 3.24 implement hasSubsequence to check if a list is contained as subsequence in another list
 
-## 3. Handling errors without exceptions
+## 4. Handling errors without exceptions
 
 4.2 variance function in terms of flatMap
 4.4 function sequence that combines a list of Options into one Option containing
@@ -55,3 +55,19 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 4.7 sequence and traverse for Either
 4.8 change map2 implementation so that it can return both errors for InsuranceEngine
+
+## 5. Strictness and laziness
+
+5.4 Implement forAll
+5.5 Use foldRight to implement takeWhile
+5.6 Hard: Implement headOption using foldRight
+5.7 Implement map, filter, append, flatMap, foldRight
+
+5.9 Implement from - integer generation
+5.10 Function fibs generating fibonacci numbers
+5.11 Implement unfold
+5.12 Write fibs, from constant and ones in terms of unfold
+5.13 Use unfold to implement map, take, takeWhile, zipWith
+5.14 Hard: Implement startsWith using functions you’ve written. It should check if one Stream is a prefix of another.
+5.15 Implement tails using unfold. For a given Stream, tails returns the Stream of suffixes of the input sequence, starting with the original Stream.
+5.16 Hard: Generalize tails to the function scanRight, which is like a foldRight that returns a stream of the intermediate results
