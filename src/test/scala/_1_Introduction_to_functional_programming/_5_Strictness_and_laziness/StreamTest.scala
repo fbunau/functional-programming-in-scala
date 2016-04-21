@@ -72,8 +72,12 @@ class StreamTest extends FreeSpec with Matchers {
     Stream(1, 2, 3, 4, 5, 6, 7).drop(4).toList shouldBe List(5, 6, 7)
   }
 
-  "Can take while condition is true" in {
-    Stream(1, 2, 3, 4, 5, 6, 7).takeWhile(x => x % 2 == 0).toList shouldBe List(2, 4, 6)
+  "Can take while condition is true. No part of the list" in {
+    Stream(1, 2, 3, 4, 5, 6, 7).takeWhile(x => x > 2).toList shouldBe List()
+  }
+
+  "Can take while condition is true. Part of the list" in {
+    Stream(1, 2, 3, 4, 5, 6, 7).takeWhile(x => x <= 3).toList shouldBe List(1, 2, 3)
   }
 
   "Can take while condition is true, with lazy element in stream" in {
@@ -84,10 +88,10 @@ class StreamTest extends FreeSpec with Matchers {
     }
 
     val stream = Stream.cons(1, Stream.cons(2, Stream.cons(3, Stream.cons(4, Stream.cons(5, Stream.cons(lazyElement, Stream.cons(6, Stream.cons(7, Stream.cons(8, Empty)))))))))
-    val filteredStream = stream.takeWhile(x => x % 2 == 0)
+    val filteredStream = stream.takeWhile(x => x < 100)
     evaluated shouldBe 0
 
-    filteredStream.toList shouldBe List(2, 4, 10, 6, 8)
+    filteredStream.toList shouldBe List(1, 2, 3, 4, 5, 10, 6, 7, 8)
     evaluated shouldBe 1
   }
 
@@ -96,7 +100,7 @@ class StreamTest extends FreeSpec with Matchers {
   }
 
   "Value does not exist in stream" in {
-    Stream(1, 2, 3, 4, 5).exists(x => x == 10) shouldBe true
+    Stream(1, 2, 3, 4, 5).exists(x => x == 10) shouldBe false
   }
 
   "Value exists in stream and lazy value is not evaluated" in {
