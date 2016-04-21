@@ -7,7 +7,6 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 ## 2. Getting started with functional programming in Scala
 
-2.1 isSorted, according to given comparison function
 2.4 uncurry
 
 ## 3. Functional data structures
