@@ -36,4 +36,12 @@ class CurryFunctionsTest extends FreeSpec with Matchers {
     curriedAndAppliedAdditionalParameter(4) shouldBe 10
     e.curryWithOptionalParameterList(1)(2)(3)(4) shouldBe 10
   }
+
+  "Uncurry functions (A+B)" in {
+    val curriedSum = e.curry(sum)
+    val uncurriedSum = e.uncurry(curriedSum)
+
+    uncurriedSum(6, 13) shouldBe 19
+  }
+  
 }

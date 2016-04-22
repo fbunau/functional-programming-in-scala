@@ -14,4 +14,9 @@ case class CurryFunctions() {
     a + b + c + d
   }
 
+  def uncurry[A,B,C](f: A => B => C): (A, B) => C = {
+    f(_)(_)
+    // (a: A, b: B) => f(a)(b)
+  }
+
 }
