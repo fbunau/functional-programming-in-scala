@@ -25,29 +25,29 @@ object RNG {
     else (-x, rngNext)
   }
 
-  def double(rng: RNG): (Double, RNG) = {
+  def doubleNaive(rng: RNG): (Double, RNG) = {
     val (x, nextRNG) = RNG.nonNegativeInt(rng)
     (x.toDouble / (Int.MaxValue - 1), nextRNG)
   }
 
   def intDouble(rng: RNG): ((Int, Double), RNG) = {
     val (int, nextRNG) = RNG.nonNegativeInt(rng)
-    val (double, lastRNG) = RNG.double(nextRNG)
+    val (double, lastRNG) = RNG.doubleNaive(nextRNG)
 
     ((int, double), lastRNG)
   }
 
   def doubleInt(rng: RNG): ((Double, Int), RNG) = {
     val (int, nextRNG) = RNG.nonNegativeInt(rng)
-    val (double, lastRNG) = RNG.double(nextRNG)
+    val (double, lastRNG) = RNG.doubleNaive(nextRNG)
 
     ((double, int), lastRNG)
   }
 
   def double3(rng: RNG): ((Double, Double, Double), RNG) = {
-    val (d1, nextRng1) = RNG.double(rng)
-    val (d2, nextRng2) = RNG.double(nextRng1)
-    val (d3, _) = RNG.double(nextRng2)
+    val (d1, nextRng1) = RNG.doubleNaive(rng)
+    val (d2, nextRng2) = RNG.doubleNaive(nextRng1)
+    val (d3, _) = RNG.doubleNaive(nextRng2)
 
     ((d1, d2, d3), nextRng2)
   }
@@ -64,6 +64,25 @@ object RNG {
     }
 
     loop(List(), rng)
+  }
+
+  type Rand[+A] = RNG => (A, RNG)
+
+  val int: Rand[Int] = _.nextInt
+
+  def unit[A](a: A): Rand[A] = {
+    rng => (a, rng)
+  }
+
+  def map[A,B](s: Rand[A])(f: A => B): Rand[B] = {
+    rng => {
+      val (a, rng2) = s(rng)
+      (f(a), rng2)
+    }
+  }
+
+  def double(): Rand[Double] = {
+    RNG.map(nonNegativeInt)(_.toDouble / (Int.MaxValue - 1))
   }
 
 }
