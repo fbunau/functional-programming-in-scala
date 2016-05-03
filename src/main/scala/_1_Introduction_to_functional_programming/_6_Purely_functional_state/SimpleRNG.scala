@@ -27,7 +27,7 @@ object RNG {
 
   def doubleNaive(rng: RNG): (Double, RNG) = {
     val (x, nextRNG) = RNG.nonNegativeInt(rng)
-    (x.toDouble / (Int.MaxValue - 1), nextRNG)
+    (x / (Int.MaxValue.toDouble + 1), nextRNG)
   }
 
   def intDouble(rng: RNG): ((Int, Double), RNG) = {
@@ -81,8 +81,8 @@ object RNG {
     }
   }
 
-  def double(): Rand[Double] = {
-    RNG.map(nonNegativeInt)(_.toDouble / (Int.MaxValue - 1))
+  def double: Rand[Double] = {
+    RNG.map(nonNegativeInt)(_ / (Int.MaxValue.toDouble + 1))
   }
 
 }
