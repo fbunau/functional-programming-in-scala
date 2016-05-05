@@ -1,5 +1,7 @@
 package _1_Introduction_to_functional_programming._3_Functional_data_structures
 
+import scala.annotation.tailrec
+
 sealed trait List[+A]
 case object Nil extends List[Nothing]
 case class Cons[+A](head: A, tail: List[A]) extends List[A]
@@ -57,16 +59,38 @@ object List {
     case _ => l
   }
 
+  ///
+
   def foldRight[A,B](as: List[A], z: B)(f: (A, B) => B): B = as match {
     case Nil => z
     case Cons(x, xs) => f(x, foldRight(xs, z)(f))
   }
 
-  def sum(ns: List[Int]) =
+  def sumRight(ns: List[Int]) =
     foldRight(ns, 0)((x,y) => x + y)
 
-  def product(ns: List[Double]) =
+  def productRight(ns: List[Double]) =
     foldRight(ns, 1.0)(_ * _)
+
+  def lengthRight[A](as: List[A]): Int =
+    foldRight(as, 0)((_, c) => c + 1)
+
+  ///
+
+  @tailrec
+  def foldLeft[A,B](as: List[A], z: B)(f: (B, A) => B): B = as match {
+    case Nil => z
+    case Cons(x, xs) => foldLeft(xs, f(z, x))(f)
+  }
+
+  def sumLeft(ns: List[Int]) =
+    foldLeft(ns, 0)((x,y) => x + y)
+
+  def productLeft(ns: List[Double]) =
+    foldLeft(ns, 1.0)(_ * _)
+
+  def lengthLeft[A](as: List[A]): Int =
+    foldLeft(as, 0)((c, _) => c + 1)
 
 }
 

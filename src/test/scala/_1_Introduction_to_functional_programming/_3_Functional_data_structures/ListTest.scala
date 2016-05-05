@@ -185,19 +185,58 @@ class ListTest extends FreeSpec with Matchers {
     }
 
     "Generalized implementations using higher order functions" - {
-      "Sum and product using foldRight" - {
+      "Sum, product, length using foldRight" - {
 
         "Sum on an Integer list" in {
           val l = List(1, 2, 3, 4, 5)
-          List.sum(l) shouldBe 15
+          List.sumRight(l) shouldBe 15
         }
 
         "Product on a Double list" in {
           val l: List[Double] = Cons(1, Cons(2, Cons(3, Cons(4, Cons(5, Nil)))))
-          List.product(l) shouldBe 120
+          List.productRight(l) shouldBe 120
+        }
+
+        "Length" - {
+          "Length of empty list" in {
+            List.lengthRight(List()) shouldBe 0
+          }
+
+          "Length of non-empty list" in {
+            List.lengthRight(List(1, 2, 3, 4)) shouldBe 4
+          }
         }
 
       }
+
+      "Sum, product, length using foldLeft" - {
+
+        "Sum on an Integer list" in {
+          val l = List(1, 2, 3, 4, 5)
+          List.sumLeft(l) shouldBe 15
+        }
+
+        "Product on a Double list" in {
+          val l: List[Double] = Cons(1, Cons(2, Cons(3, Cons(4, Cons(5, Nil)))))
+          List.productLeft(l) shouldBe 120
+        }
+
+        "Length" - {
+          "Length of empty list" in {
+            List.lengthLeft(List()) shouldBe 0
+          }
+
+          "Length of non-empty list" in {
+            List.lengthLeft(List(1, 2, 3, 4)) shouldBe 4
+          }
+        }
+
+      }
+
+      "Relationship between data constructor and foldRight" in {
+        List.foldRight(List(1,2,3), Nil:List[Int])(Cons(_, _)) shouldBe List(1, 2, 3)
+      }
+
     }
   }
 
