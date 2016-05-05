@@ -132,6 +132,26 @@ class ListTest extends FreeSpec with Matchers {
 
       }
 
+      "Append two lists" - {
+
+        "Append non-empty list to non-empty list" in {
+          List.append(List(1, 2, 3, 4), List(5, 6, 7, 8, 9)) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        }
+
+        "Append empty list to non-empty list" in {
+          List.append(List(1, 2, 3, 4), List()) shouldBe List(1, 2, 3, 4)
+        }
+
+        "Append non-empty list to empty list" in {
+          List.append(List(), List(1, 2, 3, 4)) shouldBe List(1, 2, 3, 4)
+        }
+
+        "Append empty list to empty list" in {
+          List.append(List(), List()) shouldBe List()
+        }
+
+      }
+
     }
 
     "Recursive simple implementations using pattern matching" - {

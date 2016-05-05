@@ -36,6 +36,11 @@ object List {
     else drop(tail(l), n-1)
   }
 
+  def append[A](l1: List[A], l2: List[A]): List[A] = l1 match {
+    case Nil => l2
+    case Cons(h, t) => Cons(h, append(t, l2))
+  }
+
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = l match {
     case Cons(h,t) if f(h) => dropWhile(t, f)
     case _ => l

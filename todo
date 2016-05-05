@@ -7,8 +7,6 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 ## 3. Functional data structures
 
-// append example
-
 3.6 init ( new list all but the last elements )
 3.7 foldRight with short-circuiting
 3.8 passing Nil and Cons to foldRight
