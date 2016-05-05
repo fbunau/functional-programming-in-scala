@@ -24,10 +24,10 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
    - Functional data structures
       + [Implementing a List](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L3-L5)
       + [Creating a List literal using variadic apply](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L9-L11)
-      + [Pattern matching ; implement list operations: tail, setHead, sum, product](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L13-L32)
+      + [Pattern matching ; implement list operations: tail, setHead, sum, product](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L13-L37)
       + [Pattern matching deeper in the type structure](src/test/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/ListTest.scala#L143-L153)
-      + [Helping type inference using optional parameter lists](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L29-L37)
-      + [HOF: foldRight ; sum and product generalized implementations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L39-L48)
+      + [Helping type inference using optional parameter lists](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L39-L47)
+      + [HOF: foldRight ; sum and product generalized implementations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L49-L58)
       + [Implementing a Tree](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L3-L5)
       + [Operations on tree: size, max, depth, map](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L9-L27)
       + [Fold on Tree: Using HOF to implement tree operations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L29-L50)

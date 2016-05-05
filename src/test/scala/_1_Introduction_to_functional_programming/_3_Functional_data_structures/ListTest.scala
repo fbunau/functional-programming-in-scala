@@ -112,6 +112,26 @@ class ListTest extends FreeSpec with Matchers {
         }
       }
 
+      "Drop first n elements" - {
+
+        "Drop some elements from a non empty list" in {
+          List.drop(List(1, 2, 3, 4, 5), 3) shouldBe List(4, 5)
+        }
+
+        "Drop all elements from a non empty list" in {
+          List.drop(List(1, 2, 3, 4, 5), 5) shouldBe List()
+        }
+
+        "Drop more nb of elements from a non empty list" in {
+          List.drop(List(1, 2, 3, 4, 5), 10) shouldBe List()
+        }
+
+        "Drop elements from an empty list" in {
+          List.drop(List(), 10) shouldBe List()
+        }
+
+      }
+
     }
 
     "Recursive simple implementations using pattern matching" - {

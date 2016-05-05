@@ -7,8 +7,6 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 ## 3. Functional data structures
 
-3.4 drop ( n elements )
-
 // append example
 
 3.6 init ( new list all but the last elements )
