@@ -24,13 +24,13 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
    - Functional data structures
       + [Implementing a List](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L3-L5)
       + [Creating a List literal using variadic apply](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L9-L11)
-      + [Using pattern matching to create list operations as functions in a companion object](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L13-L27)
+      + [Pattern matching | implement list operations: tail, sum, product](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L13-L27)
       + [Pattern matching deeper in the type structure](src/test/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/ListTest.scala#L131-L141)
-      + [Helping type inference using optional parameter list](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L29-L37)
-      + [Sum and product generalized by implementing using higher order function: foldRight](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L39-L48)
+      + [Helping type inference using optional parameter lists](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L29-L37)
+      + [HOF: foldRight | sum and product generalized implementations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L39-L48)
       + [Implementing a Tree](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L3-L5)
       + [Operations on tree: size, max, depth, map](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L9-L27)
-      + [Fold on Tree: Using HOF to implement operations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L29-L50)
+      + [Fold on Tree: Using HOF to implement tree operations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L29-L50)
    - Handling errors without exceptions
       + [Implementing Option](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/Option.scala)
       + [Example of lifting an existing function to work with Option](src/main/scala/_1_Introduction_to_functional_programming/_4_Handling_errors_withouth_exceptions/InsuranceEngine.scala)
