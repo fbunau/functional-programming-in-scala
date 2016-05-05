@@ -152,6 +152,17 @@ class ListTest extends FreeSpec with Matchers {
 
       }
 
+      "Return a list with all but the last elements of a list" - {
+
+        "On non empty list" in {
+          List.init(List(1, 2, 3, 4)) shouldBe List(1, 2, 3)
+        }
+
+        "On empty list" in {
+          List.init(List()) shouldBe List()
+        }
+
+      }
     }
 
     "Recursive simple implementations using pattern matching" - {
