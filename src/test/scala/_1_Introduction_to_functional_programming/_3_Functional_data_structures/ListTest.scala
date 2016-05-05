@@ -86,10 +86,23 @@ class ListTest extends FreeSpec with Matchers {
     "Creating list using List literal" in {
       List(1, 2, 3, 4) shouldBe Cons(1, Cons(2, Cons(3, Cons(4, Nil))))
     }
-
   }
 
   "List operations implemented in companion object" - {
+
+    "Simple list operations using pattern matching" - {
+
+      "Tail" - {
+        "Tail of a non empty list" in {
+          List.tail(List(1, 2, 3, 4, 5, 6)) shouldBe List(2, 3, 4, 5, 6)
+        }
+
+        "Tail of am empty list" in {
+          List.tail(List()) shouldBe Nil
+        }
+      }
+
+    }
 
     "Recursive simple implementations using pattern matching" - {
 
@@ -115,7 +128,7 @@ class ListTest extends FreeSpec with Matchers {
 
         "Sum on an Integer list" in {
           val l = List(1, 2, 3, 4, 5)
-          List.sumNaive(l) shouldBe 15
+          List.sum(l) shouldBe 15
         }
 
         "Product on a Double list" in {
@@ -125,7 +138,6 @@ class ListTest extends FreeSpec with Matchers {
 
       }
     }
-
   }
 
   "Pattern matching deeper into the type structure" in {

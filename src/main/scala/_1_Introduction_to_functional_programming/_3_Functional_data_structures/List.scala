@@ -10,6 +10,11 @@ object List {
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 
+  def tail[A](l : List[A]) = l match {
+    case Cons(_, t) => t
+    case _ => Nil
+  }
+
   def sumNaive(ints: List[Int]): Int = ints match {
     case Nil => 0
     case Cons(x, xs) => x + sumNaive(xs)
