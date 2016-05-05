@@ -25,7 +25,7 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Implementing a List](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L3-L5)
       + [Creating a List literal using variadic apply](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L9-L11)
       + [Pattern matching ; implement list operations: tail, setHead, sum, product, drop, append](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L13-L48)
-      + [Pattern matching deeper in the type structure](src/test/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/ListTest.scala#L143-L153)
+      + [Pattern matching deeper in the type structure](src/test/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/ListTest.scala#L204-L214)
       + [Helping type inference using optional parameter lists](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L50-L58)
       + [HOF: foldRight ; sum and product generalized implementations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L60-L69)
       + [Implementing a Tree](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L3-L5)
