@@ -15,6 +15,11 @@ object List {
     case _ => Nil
   }
 
+  def setHead[A](l : List[A], h: A) = l match {
+    case Cons(_, t) => Cons(h, t)
+    case _ => Cons(h, Nil)
+  }
+
   def sumNaive(ints: List[Int]): Int = ints match {
     case Nil => 0
     case Cons(x, xs) => x + sumNaive(xs)

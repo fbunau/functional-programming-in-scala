@@ -102,6 +102,16 @@ class ListTest extends FreeSpec with Matchers {
         }
       }
 
+      "Set head" - {
+        "Set head on a non-empty list" - {
+          List.setHead(List(1, 2, 3, 4), 9) shouldBe List(9, 2, 3, 4)
+        }
+
+        "Set head on an empty list" - {
+          List.setHead(List(), 9) shouldBe List(9)
+        }
+      }
+
     }
 
     "Recursive simple implementations using pattern matching" - {
