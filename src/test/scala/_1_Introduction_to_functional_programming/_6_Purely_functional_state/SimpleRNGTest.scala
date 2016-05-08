@@ -4,7 +4,7 @@ import org.scalatest.{FreeSpec, Matchers}
 
 class SimpleRNGTest extends FreeSpec with Matchers {
 
-  val seed = 1111111111
+  val seed = 42
   val startRNG = SimpleRNG(seed)
 
   "Naive" - {
@@ -20,9 +20,14 @@ class SimpleRNGTest extends FreeSpec with Matchers {
       x should not be y
     }
 
-    "Seed generates first a negative int" in {
-      val (x, _) = startRNG.nextInt
-      x should be < 0
+    "Seed generates positive and negative int" in {
+      val (x1, rng1) = startRNG.nextInt
+      val (x2, rng2) = rng1.nextInt
+      val (x3, _) = rng2.nextInt
+
+      val generated = Set(x1, x2, x3)
+      generated.count(_ < 0) should be > 0
+      generated.count(_ >= 0) should be > 0
     }
 
     "Non negative int generation" in {

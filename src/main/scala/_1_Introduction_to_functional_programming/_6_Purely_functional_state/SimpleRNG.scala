@@ -22,7 +22,7 @@ object RNG {
   def nonNegativeInt(rng: RNG): (Int, RNG) = {
     val (x, rngNext) = rng.nextInt
     if (x == Int.MinValue) nonNegativeInt(rngNext)
-    else (-x, rngNext)
+    else (Math.abs(x), rngNext)
   }
 
   def doubleNaive(rng: RNG): (Double, RNG) = {
