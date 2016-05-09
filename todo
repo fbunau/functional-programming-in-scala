@@ -57,7 +57,6 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 ## 6. Purely functional state
 
-6.7 Implementation of sequence
 6.8 Implement flatMap, and then use it to implement nonNegativeLessThan
 6.9 Reimplement map and map2 in terms of flatMap
 6.10 Generalize the functions unit, map, map2, flatMap, and sequence and add to State object

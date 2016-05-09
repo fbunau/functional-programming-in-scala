@@ -52,7 +52,7 @@ object RNG {
     ((d1, d2, d3), nextRng2)
   }
 
-  def ints(count: Int)(rng: RNG): (List[Int], RNG) = {
+  def intsNaive(count: Int)(rng: RNG): (List[Int], RNG) = {
 
     @tailrec
     def loop(xs: List[Int], currentRNG: RNG): (List[Int], RNG) = {
@@ -103,6 +103,14 @@ object RNG {
 
   val doubleInt: Rand[(Double, Int)] = {
     randPair(double, int)
+  }
+
+  def sequence[A](fs: List[Rand[A]]): Rand[List[A]] = {
+    fs.foldRight(unit(List[A]()))( (rng, acc) => map2(rng, acc)(_ :: _) )
+  }
+
+  def ints(count: Int): Rand[List[Int]] = {
+    sequence(List.fill(count)(int))
   }
 
 }

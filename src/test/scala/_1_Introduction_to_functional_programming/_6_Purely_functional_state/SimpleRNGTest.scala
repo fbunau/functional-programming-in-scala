@@ -91,7 +91,7 @@ class SimpleRNGTest extends FreeSpec with Matchers {
     }
 
     "Generating a list of random integers" in {
-      val (ints, _) = RNG.ints(6)(startRNG)
+      val (ints, _) = RNG.intsNaive(6)(startRNG)
 
       ints.distinct.size shouldBe 6
     }
@@ -136,6 +136,13 @@ class SimpleRNGTest extends FreeSpec with Matchers {
 
       all(List(d1, d2)) should (be >= 0.0 and be < 1.0)
     }
+
+    "Generating a list of random integers" in {
+      val (ints, _) = RNG.ints(6)(startRNG)
+
+      ints.distinct.size shouldBe 6
+    }
+
   }
 
 }
