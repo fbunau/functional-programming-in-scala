@@ -47,4 +47,5 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Making stateful APIs pure, with simple next state return](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L5-L18)
       + [Naive composition of state generating functions](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L22-L67)
       + [Generalizing using State transition type](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L69-L75)
-      + [Using combinators to compose State transitions](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L77-L1114)
+      + [Using combinators to compose State transitions](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L77-L114)
+      + [flatMap: A more powerful combinator](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L116-L141)

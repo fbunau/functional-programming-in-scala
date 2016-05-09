@@ -143,6 +143,24 @@ class SimpleRNGTest extends FreeSpec with Matchers {
       ints.distinct.size shouldBe 6
     }
 
+    "Generating non negative less than" in {
+      val generated = RNG.sequence(List.fill(100)(RNG.nonNegativeLessThan(7)))(startRNG)
+
+      generated._1.distinct.size shouldBe 7
+      all(generated._1) should (be >= 0 and be < 7)
+    }
+
+    "Flat map a more general map" in {
+      val generated = RNG.sequence(List.fill(100)(RNG.randPairViaFlatMaps(RNG.int, RNG.double)))(startRNG)
+      val intDoublePairs = generated._1
+
+      val (ints, doubles) = intDoublePairs.unzip
+
+      ints.distinct.size shouldBe 100
+      doubles.distinct.size shouldBe 100
+      all(doubles) should (be >= 0.0 and be < 1.0)
+    }
+
   }
 
 }

@@ -113,6 +113,33 @@ object RNG {
     sequence(List.fill(count)(int))
   }
 
+  def flatMap[A,B](f: Rand[A])(g: A => Rand[B]): Rand[B] = {
+    rng => {
+      val (a, rng2) = f(rng)
+      g(a)(rng2)
+    }
+  }
+
+  def nonNegativeLessThan(n: Int): Rand[Int] = {
+    flatMap(nonNegativeInt)( x => {
+      val mod = x % n
+      if (x + (n - 1) - mod >= 0) unit(mod)
+      else nonNegativeLessThan(n)
+    })
+  }
+
+  def _map[A,B](s: Rand[A])(f: A => B): Rand[B] = {
+    flatMap(s)(a => unit(f(a)))
+  }
+
+  def _map2[A,B,C](ra: Rand[A], rb: Rand[B])(f: (A, B) => C): Rand[C] = {
+    flatMap(ra)(a => _map(rb)(b => f(a, b)))
+  }
+
+  def randPairViaFlatMaps[A,B](ra: Rand[A], rb: Rand[B]): Rand[(A,B)] = {
+    _map2(ra, rb)((_, _))
+  }
+
 }
 
 
