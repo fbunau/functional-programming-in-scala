@@ -58,8 +58,8 @@ class SimpleRNGTest extends FreeSpec with Matchers {
     }
 
     "Generating Int-Double pair" in {
-      val (pair1, nextRNG) = RNG.intDouble(startRNG)
-      val (pair2, _) = RNG.intDouble(nextRNG)
+      val (pair1, nextRNG) = RNG.intDoubleNaive(startRNG)
+      val (pair2, _) = RNG.intDoubleNaive(nextRNG)
 
       val (i1, d1) = pair1
       val (i2, d2) = pair2
@@ -71,8 +71,8 @@ class SimpleRNGTest extends FreeSpec with Matchers {
     }
 
     "Generating Double-Int pair" in {
-      val (pair1, nextRNG) = RNG.doubleInt(startRNG)
-      val (pair2, _) = RNG.doubleInt(nextRNG)
+      val (pair1, nextRNG) = RNG.doubleIntNaive(startRNG)
+      val (pair2, _) = RNG.doubleIntNaive(nextRNG)
 
       val (d1, i1) = pair1
       val (d2, i2) = pair2
@@ -109,6 +109,32 @@ class SimpleRNGTest extends FreeSpec with Matchers {
       generated_double.size shouldBe 4
       all(generated_double) should (be >= 0.0 and be < 1.0)
 
+    }
+
+    "Generating Int-Double pair" in {
+      val (pair1, nextRNG) = RNG.intDouble(startRNG)
+      val (pair2, _) = RNG.intDouble(nextRNG)
+
+      val (i1, d1) = pair1
+      val (i2, d2) = pair2
+
+      i1 should not be i2
+      d1 should not be d2
+
+      all(List(d1, d2)) should (be >= 0.0 and be < 1.0)
+    }
+
+    "Generating Double-Int pair" in {
+      val (pair1, nextRNG) = RNG.doubleInt(startRNG)
+      val (pair2, _) = RNG.doubleInt(nextRNG)
+
+      val (d1, i1) = pair1
+      val (d2, i2) = pair2
+
+      i1 should not be i2
+      d1 should not be d2
+
+      all(List(d1, d2)) should (be >= 0.0 and be < 1.0)
     }
   }
 
