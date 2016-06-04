@@ -49,3 +49,5 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Generalizing using State transition type](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L69-L75)
       + [Using combinators to compose State transitions](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L77-L114)
       + [flatMap: A more powerful combinator](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L116-L141)
+      + [Generalizing functions: unit, map, map2 flatMap, sequence for a State object](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/State.scala)
+      + [Implementing a FSM (Candy Machine) using State object](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/CandyMachine.scala)

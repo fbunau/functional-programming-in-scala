@@ -55,8 +55,3 @@ This is a todo list of exercises this repo does not have covered / implemented
 5.15 Implement tails using unfold. For a given Stream, tails returns the Stream of suffixes of the input sequence, starting with the original Stream.
 5.16 Hard: Generalize tails to the function scanRight, which is like a foldRight that returns a stream of the intermediate results
 
-## 6. Purely functional state
-
-6.10 Generalize the functions unit, map, map2, flatMap, and sequence and add to State object
-
-6.11 Hard: Implement FSM Candy dispenser
