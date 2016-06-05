@@ -194,6 +194,57 @@ object List {
     foldRight(as, id)(c)(z)
   }
 
+  //
+
+  def map[A, B](as: List[A])(f: A => B): List[B] = {
+    foldRight(as, List[B]())((h, t) => Cons(f(h), t))
+  }
+
+  def flatMap[A, B](as: List[A])(f: A => List[B]): List[B] = {
+    concat(map(as)(f))
+  }
+
+  def filter[A](as: List[A])(f: A => Boolean): List[A] = {
+    flatMap(as)(a => if (f(a)) List(a) else List())
+  }
+
+  def zipWith[A, B, C](l1: List[A], l2: List[B])(f: (A, B) => C): List[C] = (l1, l2) match {
+    case (_, Nil) => Nil
+    case (Nil, _) => Nil
+    case (Cons(h1, t1), Cons(h2, t2)) => Cons(f(h1, h2), zipWith(t1, t2)(f))
+  }
+
+  //
+
+  def naiveAddOne(as: List[Int]): List[Int] = {
+    foldRight(as, List[Int]())((h, t) => Cons(h + 1, t))
+  }
+
+  def naiveDoubleToString(as: List[Double]): List[String] = {
+    foldRight(as, List[String]())((h, t) => Cons(h.toString, t))
+  }
+
+  def filterRecursive[A](as: List[A])(f: A => Boolean): List[A] = as match {
+    case Nil => Nil
+    case Cons(h, t) if f(h) => Cons(h, filterRecursive(t)(f))
+    case Cons(h, t) => filterRecursive(t)(f)
+  }
+
+  def filterFoldRight[A](as: List[A])(f: A => Boolean): List[A] = {
+    foldRight(as, List[A]())(
+      (h, t) =>
+        if (f(h)) Cons(h, t)
+        else t
+    )
+  }
+
+  def addTwoIntLists(l1: List[Int], l2: List[Int]): List[Int] = (l1, l2) match {
+    case (Nil, Nil) => Nil
+    case (Cons(h, t), Nil) => Cons(h, addTwoIntLists(t, Nil))
+    case (Nil, Cons(h, t)) => Cons(h, addTwoIntLists(t, Nil))
+    case (Cons(h1, t1), Cons(h2, t2)) => Cons(h1 + h2, addTwoIntLists(t1, t2))
+  }
+
 }
 
 

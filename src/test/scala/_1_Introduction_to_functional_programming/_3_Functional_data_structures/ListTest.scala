@@ -316,4 +316,122 @@ class ListTest extends FreeSpec with Matchers {
 
   }
 
+  "Naive map functions" - {
+    "Add one" - {
+      "On empty list" in {
+        List.naiveAddOne(List()) shouldBe List()
+      }
+
+      "On non-empty list" in {
+        List.naiveAddOne(List(1, 2, 3)) shouldBe List(2, 3, 4)
+      }
+    }
+
+    "Double to String" - {
+      "On empty list" in {
+        List.naiveDoubleToString(List()) shouldBe List()
+      }
+
+      "On non-empty list" in {
+        List.naiveDoubleToString(List(1.0, 2.0, 3.0)) shouldBe List("1.0", "2.0", "3.0")
+      }
+    }
+  }
+
+  "Map" - {
+    "Add one" - {
+      "On empty list" in {
+        List.map(List[Int]())(_ + 1) shouldBe List()
+      }
+
+      "On non-empty list" in {
+        List.map(List(1, 2, 3))(_ + 1) shouldBe List(2, 3, 4)
+      }
+    }
+
+    "Double to String" - {
+      "On empty list" in {
+        List.map(List())(_.toString) shouldBe List()
+      }
+
+      "On non-empty list" in {
+        List.map(List(1.0, 2.0, 3.0))(_.toString) shouldBe List("1.0", "2.0", "3.0")
+      }
+    }
+  }
+
+  "Filter" - {
+    "Recursive" - {
+      "Filter on empty list" in {
+        List.filterRecursive(List[Int]())(x => x > 2) shouldBe List()
+      }
+
+      "Filter on non-empty list, none match" in {
+        List.filterRecursive(List(1, 2, 3))(x => x > 3) shouldBe List()
+      }
+
+      "Filter on non-empty list, all match" in {
+        List.filterRecursive(List(1, 2, 3))(x => x > 0) shouldBe List(1, 2, 3)
+      }
+
+      "Filter on non-empty list, some match" in {
+        List.filterRecursive(List(1, 2, 3))(x => x % 2 == 1) shouldBe List(1, 3)
+      }
+    }
+
+    "Fold right" - {
+      "Filter on empty list" in {
+        List.filterFoldRight(List[Int]())(x => x > 2) shouldBe List()
+      }
+
+      "Filter on non-empty list, none match" in {
+        List.filterFoldRight(List(1, 2, 3))(x => x > 3) shouldBe List()
+      }
+
+      "Filter on non-empty list, all match" in {
+        List.filterFoldRight(List(1, 2, 3))(x => x > 0) shouldBe List(1, 2, 3)
+      }
+
+      "Filter on non-empty list, some match" in {
+        List.filterFoldRight(List(1, 2, 3))(x => x % 2 == 1) shouldBe List(1, 3)
+      }
+    }
+
+    "Flat map" - {
+      "Filter on empty list" in {
+        List.filter(List[Int]())(x => x > 2) shouldBe List()
+      }
+
+      "Filter on non-empty list, none match" in {
+        List.filter(List(1, 2, 3))(x => x > 3) shouldBe List()
+      }
+
+      "Filter on non-empty list, all match" in {
+        List.filter(List(1, 2, 3))(x => x > 0) shouldBe List(1, 2, 3)
+      }
+
+      "Filter on non-empty list, some match" in {
+        List.filter(List(1, 2, 3))(x => x % 2 == 1) shouldBe List(1, 3)
+      }
+    }
+  }
+
+  "Flat map" - {
+    "Doubling elements in a list" in {
+      List.flatMap(List(1, 2, 3))(i => List(i, i)) shouldBe List(1, 1, 2, 2, 3, 3)
+    }
+  }
+
+  "Add two int lists" - {
+    "Naive" in {
+      List.addTwoIntLists(List(1, 2, 3), List(4, 5, 6)) shouldBe List(5, 7, 9)
+    }
+
+    "Zip with" in {
+      List.zipWith(List(1, 2, 3), List(4, 5, 6))(_ + _) shouldBe List(5, 7, 9)
+    }
+  }
+
+
+
 }
