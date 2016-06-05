@@ -46,8 +46,8 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
    - Strictness and laziness
       + [Implementing Stream](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L44-L45)
       + [Implementing a smart constructor](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L49-L53)
-      + [Generalizing fold for streams](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L34-L38)
-      + [Stream operations, just like List has](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L6-L42)
+      + [foldRight](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L33-L37)
+      + [Collection functions on Stream](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L7-L40)
       + [Infinite stream generators](src/main/scala/_1_Introduction_to_functional_programming/_5_Strictness_and_laziness/Stream.scala#L66-L68)
    - Purely functional state
       + [Making stateful APIs pure, with simple next state return](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L5-L18)
