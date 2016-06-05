@@ -231,6 +231,20 @@ class ListTest extends FreeSpec with Matchers {
           }
         }
 
+        "Reverse" - {
+          "Reverse non-empty list" in {
+            List.reverse(List(1, 2, 3)) shouldBe List(3, 2, 1)
+          }
+
+          "Reverse singleton list" in {
+            List.reverse(List(1)) shouldBe List(1)
+          }
+
+          "Reverse empty list" in {
+            List.reverse(List()) shouldBe List()
+          }
+        }
+
       }
 
       "Relationship between data constructor and foldRight" in {
