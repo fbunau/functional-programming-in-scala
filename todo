@@ -7,9 +7,6 @@ This is a todo list of exercises this repo does not have covered / implemented
 
 ## 3. Functional data structures
 
-3.14 append using either foldLeft or foldRight
-3.15 concatenate a list of list into a single list
-
 3.16 transform list of integers by adding 1 to each element
 3.17 List[Double] to List[String]
 3.18 implement map

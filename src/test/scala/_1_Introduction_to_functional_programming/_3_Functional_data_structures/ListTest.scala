@@ -207,6 +207,26 @@ class ListTest extends FreeSpec with Matchers {
           }
         }
 
+        "Append two lists" - {
+
+          "Append non-empty list to non-empty list" in {
+            List.appendWithFoldRight(List(1, 2, 3, 4), List(5, 6, 7, 8, 9)) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+          }
+
+          "Append empty list to non-empty list" in {
+            List.appendWithFoldRight(List(1, 2, 3, 4), List()) shouldBe List(1, 2, 3, 4)
+          }
+
+          "Append non-empty list to empty list" in {
+            List.appendWithFoldRight(List(), List(1, 2, 3, 4)) shouldBe List(1, 2, 3, 4)
+          }
+
+          "Append empty list to empty list" in {
+            List.appendWithFoldRight(List(), List()) shouldBe List()
+          }
+
+        }
+
       }
 
       "Sum, product, length using foldLeft" - {
@@ -242,6 +262,17 @@ class ListTest extends FreeSpec with Matchers {
 
           "Reverse empty list" in {
             List.reverse(List()) shouldBe List()
+          }
+        }
+
+        "Concat" - {
+          "Empty list" in {
+            List.concat(List()) shouldBe List()
+          }
+
+          "Mixed list of lists" in {
+            List.concat(List( List(), List(1, 2), List(3, 4, 5), List(6), List(), List(7, 8))) shouldBe
+              List(1, 2, 3, 4, 5, 6, 7, 8)
           }
         }
 

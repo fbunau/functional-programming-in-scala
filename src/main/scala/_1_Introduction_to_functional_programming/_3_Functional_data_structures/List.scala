@@ -80,6 +80,14 @@ object List {
   def lengthRight[A](as: List[A]): Int =
     foldRight(as, 0)((_, c) => c + 1)
 
+  def appendWithFoldRight[A](l1: List[A], l2: List[A]): List[A] = {
+    foldRight(l1, l2)(Cons(_, _))
+  }
+
+  def concat[A](lists: List[List[A]]): List[A] = {
+    foldRight(lists, List[A]())(appendWithFoldRight)
+  }
+
   ///
 
   /*
