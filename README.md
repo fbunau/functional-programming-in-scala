@@ -34,6 +34,7 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [Naive map, filter, zipWith](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L219-L246)
       + [HOF: map, flatMap, filter, zipWith](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L199-L215)
       + [Scala Collections library examples](src/test/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/ScalaCollectionLibraryExamples.scala)
+      + [hasSubsequence: Loss of efficiency when assembling list functions from simpler components](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/List.scala#L248-L260)
       + [Implementing a Tree](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L3-L5)
       + [Operations on tree: size, max, depth, map](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L9-L27)
       + [Fold on Tree: Using HOF to implement tree operations](src/main/scala/_1_Introduction_to_functional_programming/_3_Functional_data_structures/Tree.scala#L29-L50)

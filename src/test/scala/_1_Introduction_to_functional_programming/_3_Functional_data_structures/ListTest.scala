@@ -432,6 +432,13 @@ class ListTest extends FreeSpec with Matchers {
     }
   }
 
+  "Has subsequence" in {
+    List.hasSubsequence(List(1, 2, 3, 4), List(1, 2)) shouldBe true
+    List.hasSubsequence(List(1, 2, 3, 4), List(2, 3)) shouldBe true
+    List.hasSubsequence(List(1, 2, 3, 4), List(4)) shouldBe true
+    List.hasSubsequence(List(1, 2, 3, 4), List(2, 4)) shouldBe false
+  }
+
 
 
 }

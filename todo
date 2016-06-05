@@ -6,9 +6,6 @@ todo overtime: Add example of all usages of collection library functions
 
 #### 1 Introduction to functional programming
 
-## 3. Functional data structures
-
-3.24 implement hasSubsequence to check if a list is contained as subsequence in another list
 
 ## 4. Handling errors without exceptions
 

@@ -245,6 +245,20 @@ object List {
     case (Cons(h1, t1), Cons(h2, t2)) => Cons(h1 + h2, addTwoIntLists(t1, t2))
   }
 
+  @tailrec
+  private def matchAtBegining[A](l: List[A], toMatch: List[A]): Boolean = (l, toMatch) match {
+    case (_, Nil) => true
+    case (Cons(h1, t1), Cons(h2, t2)) if h1 == h2 => matchAtBegining(t1, t2)
+    case _ => false
+  }
+
+  @tailrec
+  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = sup match {
+    case Nil => sub == Nil
+    case _ if matchAtBegining(sup, sub) => true
+    case Cons(_, t) => hasSubsequence(t, sub)
+  }
+
 }
 
 
