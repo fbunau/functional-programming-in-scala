@@ -45,4 +45,10 @@ class ParTest extends FreeSpec with Matchers {
     Par.sum(1 to 100)(wses).get shouldBe 5050
   }
 
+  "General max of list in parallel" in {
+    val wses = Executors.newWorkStealingPool()
+
+    Par.max(Vector(8, 1, 2, 7, 9, 23, 1, 5, 2))(wses).get shouldBe 23
+  }
+
 }

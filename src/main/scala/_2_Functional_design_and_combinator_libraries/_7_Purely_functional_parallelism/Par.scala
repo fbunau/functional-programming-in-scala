@@ -17,7 +17,6 @@ object Par {
   def asyncF[A, B](f: A => B): A => Par[B] =
     a => lazyUnit(f(a))
 
-
   def run[A](es: ExecutorService)(a: => Par[A]): Future[A] =
     a(es)
 
@@ -38,10 +37,8 @@ object Par {
   def map[A, B](parList: Par[A])(f: A => B): Par[B] =
     map2(parList, unit())((a, _) => f(a))
 
-
   def parMap[A, B](ps: List[A])(f: A => B): Par[List[B]] =
     fork(sequence(ps.map(asyncF(f))))
-
 
   def sequence[A](as: List[Par[A]]): Par[List[A]] = {
     val z = unit(List[A]())
@@ -56,7 +53,7 @@ object Par {
       map2(sequenceBalanced(l), sequenceBalanced(r))(_ ++ _)
   }
 
-  // These are very similar to the implementations from List.scala !
+  // These are very similar to the implementations from List.scala ! (compare and contrast)
 
   def foldRight[A, B](as: Par[List[A]], z: Par[B])(f: (A, B) => B): Par[B] = {
     map2(as, z)(
@@ -69,7 +66,7 @@ object Par {
 
   def concat[A](lists: Par[List[List[A]]]): Par[List[A]] = {
     foldRight(lists, unit(List[A]()))(
-      (a: List[A], b: List[A]) => a ::: b
+      (a: List[A], b: List[A]) => a ++ b
     )
   }
 
@@ -97,13 +94,20 @@ object Par {
     }
   }
 
+  //
+
   def sum(ints: IndexedSeq[Int]): Par[Int] = {
     val intsPar: IndexedSeq[Par[Int]] = ints.map(asyncF(a => a))
     val parSequence: Par[IndexedSeq[Int]] = sequenceBalanced(intsPar)
-    // todo use foldright, modify something
-    foldRight(parSequence, unit(0))
-   // fork(sequence(ints.map(asyncF(f))))
-//    sequenceBalanced()
+    val parList: Par[List[Int]] = map(parSequence)(_.toList)
+    foldRight(parList, unit(0))(_ + _)
+  }
+
+  def max(ints: IndexedSeq[Int]): Par[Int] = {
+    val intsPar: IndexedSeq[Par[Int]] = ints.map(asyncF(a => a))
+    val parSequence: Par[IndexedSeq[Int]] = sequenceBalanced(intsPar)
+    val parList: Par[List[Int]] = map(parSequence)(_.toList)
+    foldRight(parList, unit(Int.MinValue))(Math.max)
   }
 
   def sortPar(parList: Par[List[Int]]): Par[List[Int]] = {

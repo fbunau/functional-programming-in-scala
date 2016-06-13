@@ -57,3 +57,12 @@ Bellow is a useful listing to help navigate the repo and revisit parts by jumpin
       + [flatMap: A more powerful combinator](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/SimpleRNG.scala#L116-L141)
       + [Generalizing functions: unit, map, map2 flatMap, sequence for a State object](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/State.scala)
       + [Implementing a FSM (Candy Machine) using State object](src/main/scala/_1_Introduction_to_functional_programming/_6_Purely_functional_state/CandyMachine.scala)
+
+2. Functional design and combinator libraries
+    - Purely functional parallelism
+      + [Implementing a data type for parallel computations](src/main/scala/_2_Functional_design_and_combinator_libraries/_7_Purely_functional_parallelism/Par.scala#L9-38)
+      + [Using Par type to compute sum in parallel](src/main/scala/_2_Functional_design_and_combinator_libraries/_7_Purely_functional_parallelism/Par.scala#L88-95)
+      + [Making map2 respect timeouts on Future](src/main/scala/_2_Functional_design_and_combinator_libraries/_7_Purely_functional_parallelism/Map2Future.scala)
+      + [Combinators: parMap, sequence, sequenceBalanced](src/main/scala/_2_Functional_design_and_combinator_libraries/_7_Purely_functional_parallelism/Par.scala#L40-54)
+      + [Additional combinators: foldRight, concat, flatMap, filter, parFilter](src/main/scala/_2_Functional_design_and_combinator_libraries/_7_Purely_functional_parallelism/Par.scala#L56-84)
+      + [Operation on sequences in parallel using Par operations: sum, max, sort](src/main/scala/_2_Functional_design_and_combinator_libraries/_7_Purely_functional_parallelism/Par.scala#L99-115)
