@@ -8,7 +8,7 @@ The repo contains solved exercises, code from the book examples or original code
 Unit tests are used to verify and run the implementation
 (todo some code needs to be migrated to unit tests)
 
-Bellow is a useful listing to help navigate the repo and revisit parts by jumping straight to the code from here
+Bellow is a useful listing to help navigate the repo and revisit parts by jumping straight to the code from here:
 
 1. Introduction to functional programming
    - What is functional programming?
