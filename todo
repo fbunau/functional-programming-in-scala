@@ -37,3 +37,4 @@ todo overtime: Add example of all usages of collection library functions
 5.15 Implement tails using unfold. For a given Stream, tails returns the Stream of suffixes of the input sequence, starting with the original Stream.
 5.16 Hard: Generalize tails to the function scanRight, which is like a foldRight that returns a stream of the intermediate results
 
+test
