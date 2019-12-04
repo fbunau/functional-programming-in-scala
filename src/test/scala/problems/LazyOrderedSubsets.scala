@@ -1,6 +1,7 @@
 package problems
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
 import scala.collection.mutable.ListBuffer
 
@@ -18,12 +19,12 @@ import scala.collection.mutable.ListBuffer
   * Can we consume the input stream lazily with just enough data to produce only the amount of results we need
   * according to the statement above
   */
-class LazyOrderedSubsets extends FreeSpec with Matchers {
+class LazyOrderedSubsets extends AnyFreeSpec with Matchers {
 
-  private def solution(word: Stream[Char]) =
-    word.scanLeft((Stream(""), Stream(""))) ((acc, l)=> {
+  private def solution(word: LazyList[Char]) =
+    word.scanLeft((LazyList(""), LazyList(""))) ((acc, l)=> {
       val r = acc._2.map(_ + l)
-      (r, acc._2 append r)
+      (r, acc._2 concat r)
     }).flatMap(_._1)
 
   "Taking 5 elements from the result should evaluate only 3 elements from the initial stream" in {
@@ -31,7 +32,7 @@ class LazyOrderedSubsets extends FreeSpec with Matchers {
     val usedElements =  ListBuffer[Char]()
 
     solution(
-      Stream('a', 'b', 'c', 'd', 'e', 'f').map(
+      LazyList('a', 'b', 'c', 'd', 'e', 'f').map(
         x => {
           usedElements += x
           x
@@ -39,8 +40,7 @@ class LazyOrderedSubsets extends FreeSpec with Matchers {
       )
     ).take(5).toList shouldBe List("", "a", "b", "ab", "c")
 
-    // solution is 1 element greedier than optimal
-    usedElements.toList shouldBe List('a', 'b', 'c', 'd')
+    usedElements.toList shouldBe List('a', 'b', 'c')
   }
 
 }

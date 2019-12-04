@@ -1,6 +1,7 @@
 package _1_Introduction_to_functional_programming._4_Handling_errors_withouth_exceptions
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
 import scala.annotation.tailrec
 
@@ -29,9 +30,9 @@ case class Company() {
 
 }
 
-class OptionTest extends FreeSpec with Matchers {
+class OptionTest extends AnyFreeSpec with Matchers {
 
-  val company = Company()
+  private val company = Company()
 
   "Testing framework works" - {
 

@@ -1,15 +1,16 @@
 package _1_Introduction_to_functional_programming._2_Getting_started_with_functional_programming_in_Scala
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class CurryFunctionsTest extends FreeSpec with Matchers {
+class CurryFunctionsTest extends AnyFreeSpec with Matchers {
 
-  val e = CurryFunctions()
+  private val e = CurryFunctions()
 
-  val A = 4
-  val B = 5
+  private val A = 4
+  private val B = 5
 
-  def sum(a: Int, b: Int) = {
+  private def sum(a: Int, b: Int) = {
     a + b
   }
 

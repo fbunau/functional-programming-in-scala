@@ -1,8 +1,9 @@
 package _1_Introduction_to_functional_programming._3_Functional_data_structures
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class ScalaCollectionLibraryExamples extends FreeSpec with Matchers {
+class ScalaCollectionLibraryExamples extends AnyFreeSpec with Matchers {
 
   "Operations between the elements" - {
 

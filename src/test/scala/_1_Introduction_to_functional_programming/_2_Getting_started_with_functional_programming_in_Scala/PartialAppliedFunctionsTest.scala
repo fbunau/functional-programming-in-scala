@@ -1,15 +1,16 @@
 package _1_Introduction_to_functional_programming._2_Getting_started_with_functional_programming_in_Scala
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class PartialAppliedFunctionsTest extends FreeSpec with Matchers {
+class PartialAppliedFunctionsTest extends AnyFreeSpec with Matchers {
 
-  val e = PartialAppliedFunctions()
+  private val e = PartialAppliedFunctions()
 
-  val A = 4
-  val B = 5
+  private val A = 4
+  private val B = 5
 
-  def sum(a: Int, b: Int) = {
+  private def sum(a: Int, b: Int): Int = {
     a + b
   }
 
@@ -19,7 +20,7 @@ class PartialAppliedFunctionsTest extends FreeSpec with Matchers {
     sumWithA(B) shouldBe 9
   }
 
-  "Partial applied functions with with Scala lib (A+B)" - {
+  "Partial applied functions with with Scala lib (A+B)" in {
     val sumWithA = e.partialWithScalaLib(A, sum)
 
     sumWithA(B) shouldBe 9

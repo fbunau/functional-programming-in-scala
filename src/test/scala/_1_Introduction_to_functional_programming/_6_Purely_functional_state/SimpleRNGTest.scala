@@ -1,11 +1,13 @@
 package _1_Introduction_to_functional_programming._6_Purely_functional_state
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
+import scala.math.Ordering.Double.TotalOrdering
 
-class SimpleRNGTest extends FreeSpec with Matchers {
+class SimpleRNGTest extends AnyFreeSpec with Matchers {
 
-  val seed = 42
-  val startRNG = SimpleRNG(seed)
+  private val seed = 42
+  private val startRNG = SimpleRNG(seed)
 
   "Naive" - {
 

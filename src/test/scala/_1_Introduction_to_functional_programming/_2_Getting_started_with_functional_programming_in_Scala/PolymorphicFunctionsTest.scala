@@ -1,13 +1,14 @@
 package _1_Introduction_to_functional_programming._2_Getting_started_with_functional_programming_in_Scala
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class PolymorphicFunctionsTest extends FreeSpec with Matchers {
+class PolymorphicFunctionsTest extends AnyFreeSpec with Matchers {
 
-  val e = PolymorphicFunctions()
+  private val e = PolymorphicFunctions()
 
-  val stringArray = Array("is", "Scala", "cool")
-  val intArray = Array(1, 2, 3, 4)
+  private val stringArray = Array("is", "Scala", "cool")
+  private val intArray = Array(1, 2, 3, 4)
 
   "Searching for an existing String in a String array should return it's position" in {
     e.findFirst(stringArray, "Scala") shouldBe 1

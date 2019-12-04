@@ -1,8 +1,9 @@
 package _1_Introduction_to_functional_programming._5_Strictness_and_laziness
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class StreamTest extends FreeSpec with Matchers {
+class StreamTest extends AnyFreeSpec with Matchers {
 
   "Stream constructed by hand, lazy element not evaluated" in {
     var evaluated = 0

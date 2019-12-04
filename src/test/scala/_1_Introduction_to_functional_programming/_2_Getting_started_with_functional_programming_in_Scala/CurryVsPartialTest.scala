@@ -1,10 +1,11 @@
 package _1_Introduction_to_functional_programming._2_Getting_started_with_functional_programming_in_Scala
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class CurryVsPartialTest extends FreeSpec with Matchers  {
+class CurryVsPartialTest extends AnyFreeSpec with Matchers  {
 
-  def compute(a: Int, b: Int, c: Int, d: Int): Int = {
+  private def compute(a: Int, b: Int, c: Int, d: Int): Int = {
     a + b - c + d
   }
 

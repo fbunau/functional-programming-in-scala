@@ -1,8 +1,9 @@
 package _1_Introduction_to_functional_programming._3_Functional_data_structures
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class TreeTest extends FreeSpec with Matchers {
+class TreeTest extends AnyFreeSpec with Matchers {
 
   "Creation of leaf" in {
     Leaf("a")

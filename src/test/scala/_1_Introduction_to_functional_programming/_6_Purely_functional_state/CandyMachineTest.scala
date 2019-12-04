@@ -1,9 +1,11 @@
 package _1_Introduction_to_functional_programming._6_Purely_functional_state
 
-import _1_Introduction_to_functional_programming._6_Purely_functional_state.CandyMachine.simulateMachine
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class CandyMachineTest extends FreeSpec with Matchers {
+import _1_Introduction_to_functional_programming._6_Purely_functional_state.CandyMachine.simulateMachine
+
+class CandyMachineTest extends AnyFreeSpec with Matchers {
 
   "Inserting a coin into a locked machine will cause it to unlock if there’s any candy left" in {
     simulateMachine(List(Coin))

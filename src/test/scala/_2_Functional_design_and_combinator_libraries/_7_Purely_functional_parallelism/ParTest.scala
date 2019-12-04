@@ -1,11 +1,13 @@
 package _2_Functional_design_and_combinator_libraries._7_Purely_functional_parallelism
 
-import java.util.concurrent.{Executors, TimeUnit}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
+import java.util.concurrent.Executors
 
 import _2_Functional_design_and_combinator_libraries._7_Purely_functional_parallelism.Par.Par
-import org.scalatest.{FreeSpec, Matchers}
 
-class ParTest extends FreeSpec with Matchers {
+
+class ParTest extends AnyFreeSpec with Matchers {
 
   val es = Executors.newFixedThreadPool(10)
 

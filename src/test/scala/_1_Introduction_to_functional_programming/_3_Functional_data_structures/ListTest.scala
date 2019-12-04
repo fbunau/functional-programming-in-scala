@@ -1,8 +1,9 @@
 package _1_Introduction_to_functional_programming._3_Functional_data_structures
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.freespec.AnyFreeSpec
 
-class ListTest extends FreeSpec with Matchers {
+class ListTest extends AnyFreeSpec with Matchers {
 
   "Generic List implementation" - {
 
@@ -70,7 +71,7 @@ class ListTest extends FreeSpec with Matchers {
       }
 
       "String typed list with String elements chained with Integer element, assigned to String typed list should not compile" in {
-        val lstr: List[String] = Cons("a", Cons("b", Nil))
+        val _: List[String] = Cons("a", Cons("b", Nil))
         assertDoesNotCompile("val lstr2: List[String] = Cons(1, lstr)")
       }
 
@@ -103,11 +104,11 @@ class ListTest extends FreeSpec with Matchers {
       }
 
       "Set head" - {
-        "Set head on a non-empty list" - {
+        "Set head on a non-empty list" in {
           List.setHead(List(1, 2, 3, 4), 9) shouldBe List(9, 2, 3, 4)
         }
 
-        "Set head on an empty list" - {
+        "Set head on an empty list" in {
           List.setHead(List(), 9) shouldBe List(9)
         }
       }
@@ -173,7 +174,7 @@ class ListTest extends FreeSpec with Matchers {
       }
 
       "Product on an Integer list should not compile" in {
-        val l = List(1, 2, 3, 4, 5)
+        val _ = List(1, 2, 3, 4, 5)
         assertDoesNotCompile("val product = List.product(l)")
       }
 
@@ -300,7 +301,7 @@ class ListTest extends FreeSpec with Matchers {
   "Type inference is not complete, but can be helped" - {
 
     "Type inference in Scala is not complete, and sometimes it cannot infer parameter types" in {
-      val xs: List[Int] = List(1, 2, 3, 4, 5)
+      val _: List[Int] = List(1, 2, 3, 4, 5)
       assertDoesNotCompile("List.dropWhile(xs, x => x < 4)")
     }
 
@@ -351,7 +352,7 @@ class ListTest extends FreeSpec with Matchers {
 
     "Double to String" - {
       "On empty list" in {
-        List.map(List())(_.toString) shouldBe List()
+        List.map(List[Int]())(_.toString) shouldBe List()
       }
 
       "On non-empty list" in {
